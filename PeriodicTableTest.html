@@ -1,0 +1,572 @@
+<html>
+<head>
+<meta charset="utf-8">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+
+<script>
+
+Elems = {};
+Elems["B_1_1"] = {"sym":"H","name":"Hydrogen","aw":"1.008","an":"1","der":"the Greek hydro and genes meaning water-forming","typ":"Diatomic nonmetal","blk":"s-block"},
+Elems["B_1_18"] = {"sym":"He","name":"Helium","aw":"4.002602","an":"2","der":"the Greek, helios meaning sun","typ":"Noble gas","blk":"s-block"},
+Elems["B_2_1"] = {"sym":"Li","name":"Lithium","aw":"6.94","an":"3","der":"the Greek lithos meaning stone","typ":"Alkali metal","blk":"s-block"},
+Elems["B_2_2"] = {"sym":"Be","name":"Beryllium","aw":"9.012182","an":"4","der":"the Greek name for beryl, beryllo","typ":"Alkaline earth","blk":"s-block"},
+Elems["B_2_13"] = {"sym":"B","name":"Boron","aw":"10.81","an":"5","der":"the Arabic buraq, which was the name for borax","typ":"Metalloid","blk":"p-block"},
+Elems["B_2_14"] = {"sym":"C","name":"Carbon","aw":"12.011","an":"6","der":"the Latin carbo, meaning charcoal","typ":"Polyatomic nonmetal","blk":"p-block"},
+Elems["B_2_15"] = {"sym":"N","name":"Nitrogen","aw":"14.007","an":"7","der":"the Greek nitron and genes meaning nitre-forming","typ":"Polyatomic nonmetal","blk":"p-block"},
+Elems["B_2_16"] = {"sym":"O","name":"Oxygen","aw":"15.999","an":"8","der":"the Greek oxy and genes meaning acid-forming","typ":"Polyatomic nonmetal","blk":"p-block"},
+Elems["B_2_17"] = {"sym":"F","name":"Fluorine","aw":"18.9984032","an":"9","der":"the Latin fluere, meaning to flow","typ":"Diatomic nonmetal","blk":"p-block"},
+Elems["B_2_18"] = {"sym":"Ne","name":"Neon","aw":"20.1797","an":"10","der":"the Greek neos, meaning new","typ":"Noble gas","blk":"p-block"},
+Elems["B_3_1"] = {"sym":"Na","name":"Sodium","aw":"22.98976928","an":"11","der":"the English word soda (natrium in Latin)[2]","typ":"Alkali metal","blk":"s-block"},
+Elems["B_3_2"] = {"sym":"Mg","name":"Magnesium","aw":"24.305","an":"12","der":"Magnesia, a district of Eastern Thessaly in Greece","typ":"Alkaline earth","blk":"s-block"},
+Elems["B_3_13"] = {"sym":"Al","name":"Aluminium","aw":"26.9815386","an":"13","der":"the Latin name for alum, alumen meaning bitter salt","typ":"Post transition metal","blk":"p-block"},
+Elems["B_3_14"] = {"sym":"Si","name":"Silicon","aw":"28.085","an":"14","der":"the Latin silex or silicis, meaning flint","typ":"Metalloid","blk":"p-block"},
+Elems["B_3_15"] = {"sym":"P","name":"Phosphorus","aw":"30.973762","an":"15","der":"the Greek phosphoros, meaning bringer of light","typ":"Polyatomic nonmetal","blk":"p-block"},
+Elems["B_3_16"] = {"sym":"S","name":"Sulfur","aw":"32.06","an":"16","der":"Either from the Sanskrit sulvere, or the Latin sulfurium, both names for sulfur[2]","typ":"Polyatomic nonmetal","blk":"p-block"},
+Elems["B_3_17"] = {"sym":"Cl","name":"Chlorine","aw":"35.45","an":"17","der":"the Greek chloros, meaning greenish yellow","typ":"Diatomic nonmetal","blk":"p-block"},
+Elems["B_3_18"] = {"sym":"Ar","name":"Argon","aw":"39.948","an":"18","der":"the Greek, argos, meaning idle","typ":"Noble gas","blk":"p-block"},
+Elems["B_4_1"] = {"sym":"K","name":"Potassium","aw":"39.0983","an":"19","der":"the English word potash (kalium in Latin)[2]","typ":"Alkali metal","blk":"s-block"},
+Elems["B_4_2"] = {"sym":"Ca","name":"Calcium","aw":"40.078","an":"20","der":"the Latin calx meaning lime","typ":"Alkaline earth","blk":"s-block"},
+Elems["B_4_3"] = {"sym":"Sc","name":"Scandium","aw":"44.955912","an":"21","der":"Scandinavia (with the Latin name Scandia)","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_4"] = {"sym":"Ti","name":"Titanium","aw":"47.867","an":"22","der":"Titans, the sons of the Earth goddess of Greek mythology","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_5"] = {"sym":"V","name":"Vanadium","aw":"50.9415","an":"23","der":"Vanadis, an old Norse name for the Scandinavian goddess Freyja","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_6"] = {"sym":"Cr","name":"Chromium","aw":"51.9961","an":"24","der":"the Greek chroma, meaning colour","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_7"] = {"sym":"Mn","name":"Manganese","aw":"54.938045","an":"25","der":"Either the Latin magnes, meaning magnet or from the black magnesium oxide, magnesia nigra","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_8"] = {"sym":"Fe","name":"Iron","aw":"55.845","an":"26","der":"the Anglo-Saxon name iren (ferrum in Latin)","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_9"] = {"sym":"Co","name":"Cobalt","aw":"58.933195","an":"27","der":"the German word kobald, meaning goblin","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_10"] = {"sym":"Ni","name":"Nickel","aw":"58.6934","an":"28","der":"the shortened of the German kupfernickel meaning either devils copper or St. Nicholass copper","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_11"] = {"sym":"Cu","name":"Copper","aw":"63.546","an":"29","der":"the Old English name coper in turn derived from the Latin Cyprium aes, meaning a metal from Cyprus","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_12"] = {"sym":"Zn","name":"Zinc","aw":"65.38","an":"30","der":"the German, zinc, which may in turn be derived from the Persian word sing, meaning stone","typ":"Transition metal","blk":"d-block"},
+Elems["B_4_13"] = {"sym":"Ga","name":"Gallium","aw":"69.723","an":"31","der":"France (with the Latin name Gallia)","typ":"Post transition metal","blk":"d-block"},
+Elems["B_4_14"] = {"sym":"Ge","name":"Germanium","aw":"72.63","an":"32","der":"Germany (with the Latin name Germania)","typ":"Metalloid","blk":"d-block"},
+Elems["B_4_15"] = {"sym":"As","name":"Arsenic","aw":"74.9216","an":"33","der":"the Greek name arsenikon for the yellow pigment orpiment","typ":"Metalloid","blk":"d-block"},
+Elems["B_4_16"] = {"sym":"Se","name":"Selenium","aw":"78.96","an":"34","der":"Moon (with the Greek name selene)","typ":"Polyatomic nonmetal","blk":"d-block"},
+Elems["B_4_17"] = {"sym":"Br","name":"Bromine","aw":"79.904","an":"35","der":"the Greek bromos meaning stench","typ":"Diatomic nonmetal","blk":"d-block"},
+Elems["B_4_18"] = {"sym":"Kr","name":"Krypton","aw":"83.798","an":"36","der":"the Greek kryptos, meaning hidden","typ":"Noble gas","blk":"d-block"},
+Elems["B_5_1"] = {"sym":"Rb","name":"Rubidium","aw":"85.4678","an":"37","der":"the Latin rubidius, meaning deepest red","typ":"Alkali metal","blk":"s-block"},
+Elems["B_5_2"] = {"sym":"Sr","name":"Strontium","aw":"87.62","an":"38","der":"Strontian, a small town in Scotland","typ":"Alkaline earth","blk":"s-block"},
+Elems["B_5_3"] = {"sym":"Y","name":"Yttrium","aw":"88.90585","an":"39","der":"Ytterby, Sweden","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_4"] = {"sym":"Zr","name":"Zirconium","aw":"91.224","an":"40","der":"the Persian zargun, meaning gold coloured","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_5"] = {"sym":"Nb","name":"Niobium","aw":"92.90638","an":"41","der":"Niobe, daughter of king Tantalus from Greek mythology","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_6"] = {"sym":"Mo","name":"Molybdenum","aw":"95.96","an":"42","der":"the Greek molybdos meaning lead","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_7"] = {"sym":"Tc","name":"Technetium","aw":"","an":"43","der":"the Greek tekhnetos meaning artificial","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_8"] = {"sym":"Ru","name":"Ruthenium","aw":"101.07","an":"44","der":"Russia (with the Latin name Ruthenia)","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_9"] = {"sym":"Rh","name":"Rhodium","aw":"102.9055","an":"45","der":"the Greek rhodon, meaning rose coloured","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_10"] = {"sym":"Pd","name":"Palladium","aw":"106.42","an":"46","der":"From the asteroid Pallas which had been recently discovered and named at the time. The asteroid was considered a planet when it was discovered","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_11"] = {"sym":"Ag","name":"Silver","aw":"107.8682","an":"47","der":"the Anglo-Saxon name siolfur (argentum in Latin)[2]","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_12"] = {"sym":"Cd","name":"Cadmium","aw":"112.411","an":"48","der":"the Latin name for the mineral calmine, cadmia","typ":"Transition metal","blk":"d-block"},
+Elems["B_5_13"] = {"sym":"In","name":"Indium","aw":"114.818","an":"49","der":"the Latin indicium, meaning violet or indigo","typ":"Post transition metal","blk":"p-block"},
+Elems["B_5_14"] = {"sym":"Sn","name":"Tin","aw":"118.71","an":"50","der":"the Anglo-Saxon word tin (stannum in Latin, meaning hard)","typ":"Post transition metal","blk":"p-block"},
+Elems["B_5_15"] = {"sym":"Sb","name":"Antimony","aw":"121.76","an":"51","der":"the Greek anti – monos, meaning not alone (stibium in Latin)","typ":"Metalloid","blk":"p-block"},
+Elems["B_5_16"] = {"sym":"Te","name":"Tellurium","aw":"127.6","an":"52","der":"Earth, the third planet on solar system (with the Latin word tellus)","typ":"Metalloid","blk":"p-block"},
+Elems["B_5_17"] = {"sym":"I","name":"Iodine","aw":"126.90447","an":"53","der":"the Greek iodes meaning violet","typ":"Diatomic nonmetal","blk":"p-block"},
+Elems["B_5_18"] = {"sym":"Xe","name":"Xenon","aw":"131.293","an":"54","der":"the Greek xenos meaning stranger","typ":"Noble gas","blk":"p-block"},
+Elems["B_6_1"] = {"sym":"Cs","name":"Caesium","aw":"132.9054519","an":"55","der":"the Latin caesius, meaning sky blue","typ":"Alkali metal","blk":"s-block"},
+Elems["B_6_2"] = {"sym":"Ba","name":"Barium","aw":"137.327","an":"56","der":"the Greek barys, meaning heavy","typ":"Alkaline earth","blk":"s-block"},
+Elems["S_6_1"] = {"sym":"La","name":"Lanthanum","aw":"138.90547","an":"57","der":"the Greek lanthanein, meaning to lie hidden","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_2"] = {"sym":"Ce","name":"Cerium","aw":"140.116","an":"58","der":"Ceres, the Roman God of agriculture","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_3"] = {"sym":"Pr","name":"Praseodymium","aw":"140.90765","an":"59","der":"the Greek prasios didymos meaning green twin","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_4"] = {"sym":"Nd","name":"Neodymium","aw":"144.242","an":"60","der":"the Greek neos didymos meaning new twin","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_5"] = {"sym":"Eu","name":"Europium","aw":"0","an":"61","der":"Europe","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_6"] = {"sym":"Sm","name":"Samarium","aw":"150.36","an":"62","der":"Samarskite, the name of the mineral from which it was first isolated","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_7"] = {"sym":"Eu","name":"Europium","aw":"151.964","an":"63","der":"Europe","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_8"] = {"sym":"Gd","name":"Gadolinium","aw":"157.25","an":"64","der":"Johan Gadolin, chemist, physicist and mineralogist","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_9"] = {"sym":"Tb","name":"Terbium","aw":"158.92535","an":"65","der":"Ytterby, Sweden","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_10"] = {"sym":"Dy","name":"Dysprosium","aw":"162.5","an":"66","der":"the Greek dysprositos, meaning hard to get","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_11"] = {"sym":"Ho","name":"Holmium","aw":"164.93032","an":"67","der":"Stockholm, Sweden (with the Latin name Holmia)","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_12"] = {"sym":"Er","name":"Erbium","aw":"167.259","an":"68","der":"Ytterby, Sweden","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_13"] = {"sym":"Tm","name":"Thulium","aw":"168.93421","an":"69","der":"Thule, the ancient name for Scandinavia","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_14"] = {"sym":"Yb","name":"Ytterbium","aw":"173.054","an":"70","der":"Ytterby, Sweden","typ":"Lanthanide","blk":"f-block"},
+Elems["S_6_15"] = {"sym":"Lu","name":"Lutetium","aw":"174.9668","an":"71","der":"Paris, France (with the Roman name Lutetia)","typ":"Lanthanide","blk":"f-block"},
+Elems["B_6_4"] = {"sym":"Hf","name":"Hafnium","aw":"178.49","an":"72","der":"Copenhagen, Denmark (with the Latin name Hafnia)","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_5"] = {"sym":"Ta","name":"Tantalum","aw":"180.94788","an":"73","der":"King Tantalus, father of Niobe from Greek mythology","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_6"] = {"sym":"W","name":"Tungsten","aw":"183.84","an":"74","der":"the Swedish tung sten meaning heavy stone (W is wolfram, the old name of the tungsten mineral wolframite)[2]","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_7"] = {"sym":"Re","name":"Rhenium","aw":"186.207","an":"75","der":"Rhine, a river that flows from Grisons in the eastern Swiss Alps to the North Sea coast in the Netherlands (with the Latin name Rhenia)","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_8"] = {"sym":"Os","name":"Osmium","aw":"190.23","an":"76","der":"the Greek osme, meaning smell","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_9"] = {"sym":"Ir","name":"Iridium","aw":"192.217","an":"77","der":"Iris, the Greek goddess of the rainbow","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_10"] = {"sym":"Pt","name":"Platinum","aw":"195.084","an":"78","der":"the Spanish platina, meaning little silver","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_11"] = {"sym":"Au","name":"Gold","aw":"196.966569","an":"79","der":"the Anglo-Saxon word gold (aurum in Latin, meaning glow of sunrise)[2]","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_12"] = {"sym":"Hg","name":"Mercury","aw":"200.59","an":"80","der":"Mercury, the first planet in the Solar System (Hg from former name hydrargyrum, from Greek hydr- water and argyros silver)","typ":"Transition metal","blk":"d-block"},
+Elems["B_6_13"] = {"sym":"Tl","name":"Thallium","aw":"204.38","an":"81","der":"the Greek thallos, meaning a green twig","typ":"Post transition metal","blk":"p-block"},
+Elems["B_6_14"] = {"sym":"Pb","name":"Lead","aw":"207.2","an":"82","der":"the Anglo-Saxon lead (plumbum in Latin)[2]","typ":"Post transition metal","blk":"p-block"},
+Elems["B_6_15"] = {"sym":"Bi","name":"Bismuth","aw":"208.9804","an":"83","der":"the German Bisemutum a corruption of Weisse Masse meaning white mass","typ":"Post transition metal","blk":"p-block"},
+Elems["B_6_16"] = {"sym":"Po","name":"Polonium","aw":"0","an":"84","der":"Poland, the native country of Marie Curie, who first isolated the element","typ":"Post transition metal","blk":"p-block"},
+Elems["B_6_17"] = {"sym":"At","name":"Astatine","aw":"0","an":"85","der":"the Greek astatos, meaning unstable","typ":"Metalloid","blk":"p-block"},
+Elems["B_6_18"] = {"sym":"Rn","name":"Radon","aw":"0","an":"86","der":"From radium, as it was first detected as an emission from radium during radioactive decay","typ":"Noble gas","blk":"p-block"},
+Elems["B_7_1"] = {"sym":"Fr","name":"Francium","aw":"0","an":"87","der":"France","typ":"Alkali metal","blk":"s-block"},
+Elems["B_7_2"] = {"sym":"Ra","name":"Radium","aw":"0","an":"88","der":"the Latin radius, meaning ray","typ":"Alkaline earth","blk":"s-block"},
+Elems["S_7_1"] = {"sym":"Ac","name":"Actinium","aw":"0","an":"89","der":"the Greek actinos, meaning a ray","typ":"Actinide","blk":"f-block"},
+Elems["S_7_2"] = {"sym":"Th","name":"Thorium","aw":"232.03806","an":"90","der":"Thor, the Scandinavian god of thunder","typ":"Actinide","blk":"f-block"},
+Elems["S_7_3"] = {"sym":"Pa","name":"Protactinium","aw":"231.03588","an":"91","der":"the Greek protos, meaning first, as a prefix to the element actinium, which is produced through the radioactive decay of protactinium","typ":"Actinide","blk":"f-block"},
+Elems["S_7_4"] = {"sym":"U","name":"Uranium","aw":"238.02891","an":"92","der":"Uranus, the seventh planet in the Solar System","typ":"Actinide","blk":"f-block"},
+Elems["S_7_5"] = {"sym":"Np","name":"Neptunium","aw":"0","an":"93","der":"Neptune, the eighth planet in the Solar System","typ":"Actinide","blk":"f-block"},
+Elems["S_7_6"] = {"sym":"Pu","name":"Plutonium","aw":"0","an":"94","der":"Pluto, a dwarf planet in the Solar System","typ":"Actinide","blk":"f-block"},
+Elems["S_7_7"] = {"sym":"Am","name":"Americium","aw":"0","an":"95","der":"Americas, the continent where the element was first synthesized","typ":"Actinide","blk":"f-block"},
+Elems["S_7_8"] = {"sym":"Cm","name":"Curium","aw":"0","an":"96","der":"Pierre Curie, a physicist, and Marie Curie, a physicist and chemist","typ":"Actinide","blk":"f-block"},
+Elems["S_7_9"] = {"sym":"Bk","name":"Berkelium","aw":"0","an":"97","der":"Berkeley, California, USA, where the element was first synthesized","typ":"Actinide","blk":"f-block"},
+Elems["S_7_10"] = {"sym":"Cf","name":"Californium","aw":"0","an":"98","der":"State of California, USA, where the element was first synthesized","typ":"Actinide","blk":"f-block"},
+Elems["S_7_11"] = {"sym":"Es","name":"Einsteinium","aw":"0","an":"99","der":"Albert Einstein, physicist","typ":"Actinide","blk":"f-block"},
+Elems["S_7_12"] = {"sym":"Fm","name":"Fermium","aw":"0","an":"100","der":"Enrico Fermi, physicist","typ":"Actinide","blk":"f-block"},
+Elems["S_7_13"] = {"sym":"Md","name":"Mendelevium","aw":"0","an":"101","der":"Dmitri Mendeleyev, chemist and inventor","typ":"Actinide","blk":"f-block"},
+Elems["S_7_14"] = {"sym":"No","name":"Nobelium","aw":"0","an":"102","der":"Alfred Nobel, chemist, engineer, innovator, and armaments manufacturer","typ":"Actinide","blk":"f-block"},
+Elems["S_7_15"] = {"sym":"Lr","name":"Lawrencium","aw":"0","an":"103","der":"Ernest O. Lawrence, physicist","typ":"Actinide","blk":"f-block"},
+Elems["B_7_4"] = {"sym":"Rf","name":"Rutherfordium","aw":"0","an":"104","der":"Ernest Rutherford, chemist and physicist","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_5"] = {"sym":"Db","name":"Dubnium","aw":"0","an":"105","der":"Dubna, Russia","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_6"] = {"sym":"Sg","name":"Seaborgium","aw":"0","an":"106","der":"Glenn T. Seaborg, scientist","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_7"] = {"sym":"Bh","name":"Bohrium","aw":"0","an":"107","der":"Niels Bohr, physicist","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_8"] = {"sym":"Hs","name":"Hassium","aw":"0","an":"108","der":"Hesse, Germany, where the element was first synthesized","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_9"] = {"sym":"Mt","name":"Meitnerium","aw":"0","an":"109","der":"Lise Meitner, physicist","typ":"Unknown","blk":"d-block"},
+Elems["B_7_10"] = {"sym":"Ds","name":"Darmstadtium","aw":"0","an":"110","der":"Darmstadt, Germany, where the element was first synthesized","typ":"Unknown","blk":"d-block"},
+Elems["B_7_11"] = {"sym":"Rg","name":"Roentgenium","aw":"0","an":"111","der":"Wilhelm Conrad Röntgen, physicist","typ":"Unknown","blk":"d-block"},
+Elems["B_7_12"] = {"sym":"Cn","name":"Copernicium","aw":"0","an":"112","der":"Nicolaus Copernicus, astronomer","typ":"Transition metal","blk":"d-block"},
+Elems["B_7_13"] = {"sym":"Uut","name":"Ununtrium","aw":"0","an":"113","der":"IUPAC systematic element name","typ":"Unknown","blk":"d-block"},
+Elems["B_7_14"] = {"sym":"Fl","name":"Flerovium","aw":"0","an":"114","der":"Georgy Flyorov, physicist","typ":"Unknown","blk":"d-block"},
+Elems["B_7_15"] = {"sym":"Uup","name":"Ununpentium","aw":"0","an":"115","der":"IUPAC systematic element name","typ":"Unknown","blk":"d-block"},
+Elems["B_7_16"] = {"sym":"Lv","name":"Livermorium","aw":"0","an":"116","der":"Lawrence Livermore National Laboratory, within the city of Livermore, California, USA, which collaborated with JINR on the discovery of the element","typ":"Unknown","blk":"d-block"},
+Elems["B_7_17"] = {"sym":"Uus","name":"Ununseptium","aw":"0","an":"117","der":"IUPAC systematic element name","typ":"Unknown","blk":"d-block"},
+Elems["B_7_18"] = {"sym":"Uuo","name":"Ununoctium","aw":"0","an":"118","der":"IUPAC systematic element name","typ":"Unknown","blk":"d-block"}
+
+
+
+var TypesByKey = {};
+TypesByKey['T_1_1']={'name':'Alkali metal', 'shade':'lt red', 'color':'FF8080'};
+TypesByKey['T_1_2']={'name':'Alkaline earth', 'shade':'beige', 'color':'EDE1A8'};
+TypesByKey['T_1_3']={'name':'Transition metal', 'shade':'pink', 'color':'FAA7B8'};
+TypesByKey['T_1_4']={'name':'Post transition metal', 'shade':'purple', 'color':'CFB3CF'};
+TypesByKey['T_1_5']={'name':'Metalloid', 'shade':'tan', 'color':'C6B198'};
+TypesByKey['T_1_6']={'name':'Polyatomic nonmetal', 'shade':'lt green', 'color':'AEE8C7'};
+TypesByKey['T_1_7']={'name':'Diatomic nonmetal', 'shade':'yellow', 'color':'FCF47E'};
+TypesByKey['T_1_8']={'name':'Noble gas', 'shade':'lt blue', 'color':'A6EBEB'};
+TypesByKey['T_1_9']={'name':'Lanthanide', 'shade':'lt violet', 'color':'EBA9E7'};
+TypesByKey['T_1_10']={'name':'Actinide', 'shade':'ruby', 'color':'FF84BB'};
+TypesByKey['T_1_11']={'name':'Unknown', 'shade':'lt gray', 'color':'E8D1DF'};
+
+var Types = {};
+Types['Alkali metal']={'name':'Alkali metal', 'shade':'lt red', 'color':'FF8080'};
+Types['Alkaline earth']={'name':'Alkaline earth', 'shade':'beige', 'color':'EDE1A8'};
+Types['Transition metal']={'name':'Transition metal', 'shade':'pink', 'color':'FAA7B8'};
+Types['Post transition metal']={'name':'Post transition metal', 'shade':'purple', 'color':'CFB3CF'};
+Types['Metalloid']={'name':'Metalloid', 'shade':'tan', 'color':'C6B198'};
+Types['Polyatomic nonmetal']={'name':'Polyatomic nonmetal', 'shade':'lt green', 'color':'AEE8C7'};
+Types['Diatomic nonmetal']={'name':'Diatomic nonmetal', 'shade':'yellow', 'color':'FCF47E'};
+Types['Noble gas']={'name':'Noble gas', 'shade':'lt blue', 'color':'A6EBEB'};
+Types['Lanthanide']={'name':'Lanthanide', 'shade':'lt violet', 'color':'EBA9E7'};
+Types['Actinide']={'name':'Actinide', 'shade':'ruby', 'color':'FF84BB'};
+Types['Unknown']={'name':'Unknown', 'shade':'lt gray', 'color':'E8D1DF'};
+
+
+
+var currId; //holds ltest selected box
+
+$(document).ready(function(){
+
+	makeControls();
+	$( "#dialog" ).dialog({ autoOpen: false, position: ['top', 100]});
+	$( "#dialog2" ).dialog({ autoOpen: false, position: ['top', 100]});
+	$( "#dialog3" ).dialog({ autoOpen: false, position: ['top', 100]});
+	recalcBoxes();
+	
+	
+	$("#showAll").on("click", function(){
+		//assume does not have class show starting
+		if($("#showAll").hasClass("show")){
+			//make clear
+			$("#showAll").removeClass("show");
+			$(".mask2").css("opacity","1");
+			$(".mask3").css("opacity","1");
+			$(this).attr("value","Show All");
+		}else{
+			//display
+			$("#showAll").addClass("show");
+			$(".mask2").css("opacity","0");
+			$(".mask3").css("opacity","0");
+			$(this).attr("value","Mask All");
+		}
+	
+	});
+	
+	$("#getHint").on("click", function(){
+
+		if(Elems[currId]){
+			$("#hint").html(Elems[currId].der);
+			
+		}		
+	
+	});
+	
+	$("#cancelMe").on("click", function(){
+
+		$( "#dialog" ).dialog( "close" );
+	
+	});
+	
+	$("#showMe").on("click", function(){
+		
+		$("#"+currId).find(".mask2").css("opacity","0");
+		$("#"+currId).find(".mask3").css("opacity","0");
+		$( "#dialog" ).dialog( "close" );
+		
+	});
+	
+
+	$(".mask1").on("click", function(){
+		currId = $(this).parent().attr("id");
+		$("#hint").html('');
+		var url = "http://en.wikipedia.org/wiki/" + Elems[currId].name;		
+		$("#link").html("<a href='" + url + "' target='_blank'>More Info</a>");
+		$("#dialog").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+		$( "#dialog" ).dialog( "open" );	
+	
+	});
+	
+	$("#symbolGuess").on("keyup", function(e){
+		if(e.which == 13) {
+			$("#checkSymbolGuess").trigger('click');
+		}
+	});
+
+	$("#checkSymbolGuess").on("click", function(){
+		var ans = $("#symbolGuess").val();
+		if(ans == Elems[currId].sym){
+			$('#'+currId).find(".mask2").css("color","rgba(0,0,0,1)");			
+			$( "#dialog2" ).dialog( "close" );
+		}
+		$("#symbolGuess").val('');
+	});
+	
+	$("#nameGuess").on("keyup", function(e){
+		if(e.which == 13) {
+			$("#checkNameGuess").trigger('click');
+		}
+	});
+	
+	$("#checkNameGuess").on("click", function(){
+		var ans = $("#nameGuess").val();
+		if(ans.toUpperCase() == Elems[currId].name.toUpperCase()){
+			$('#'+currId).find(".mask3").css("color","rgba(0,0,0,1)");
+			$( "#dialog3" ).dialog( "close" );
+		}
+		$("#nameGuess").val('');
+	});	
+	
+	
+	$(".mask2").on("click", function(){
+		currId = $(this).parent().attr("id");
+		$("#dialog2").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+		$( "#dialog2" ).dialog( "open" );
+			
+	});
+	
+	$(".mask3").on("click", function(){
+	
+		currId = $(this).parent().attr("id");
+		$("#dialog3").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+		$( "#dialog3" ).dialog( "open" );
+			
+	});
+	
+	
+});
+
+
+
+
+$(window).resize(function(){
+	recalcBoxes();
+});
+
+function makeControls(){
+
+	var c = [];
+	
+	c.push("<input id='showAll' type='button' value='Show All'></input>");
+	
+	$("#control").append(c.join(''));
+
+}
+
+function recalcBoxes(){
+	
+	var newWinW = $("body").width();
+	var newWinH = $("body").height();
+	
+	var baseWinW = 1500;
+	var baseWinH = 800;
+	
+	var baseL = 120;
+	var baseT = 86;
+	
+	var baseW = 71;
+	var baseH = 67;
+	
+	//series base pos
+	var seriesL = 282;
+	var seriesT = 568;	
+	
+	//type base pos
+	var typeL = 330;
+	var typeT = 716;
+	var typeGap = 14;
+
+	//calc new position for base
+	var newL = baseL * newWinW / baseWinW;
+	var newT = baseT * newWinH / baseWinH;
+	var seriesNewL = seriesL * newWinW / baseWinW;
+	var seriesNewT = seriesT * newWinH / baseWinH;
+	var typeNewL = typeL * newWinW / baseWinW;
+	var typeNewT = typeT * newWinH / baseWinH;
+	var typeNewGap = typeGap * newWinW / baseWinW;
+	
+	//calc new dimensions for box
+	var newW = baseW * newWinW / baseWinW;
+	var newH = baseH * newWinH / baseWinH;	
+	
+	var cssObjClass = {};
+	cssObjClass.position = "absolute";
+	cssObjClass.border = "solid thin white";
+	cssObjClass.width = newW + "px";
+	cssObjClass.height = newH + "px";
+
+
+	//for the main periodic table			
+	for(var d = 0; d < 7; d++){
+	
+		for(var x = 0; x < 18; x++){
+		
+			var boxId = 'B_' + (d+1) + '_' + (x+1);
+
+		
+			//create the box
+			var c = [];
+			c.push("<div class='box' id='" + boxId + "'>");
+			c.push(makeBoxHtml(boxId));
+			c.push("</div>");
+			
+			$("body").append(c.join(''));		
+		
+			$("#" + boxId).css(makeBoxCss(boxId, newL, newT));
+		
+			//adjust the position			
+			newL = newL + newW;
+		
+		}
+		
+		//reset left
+		newL = baseL * newWinW / baseWinW;
+		//increment top
+		newT = newT + newH;
+	
+	}
+	
+	//for the A/L series table
+	for(var d = 5; d < 7; d++){
+	
+		for(var x = 0; x < 15; x++){
+		
+			var boxId = 'S_' + (d+1) + '_' + (x+1);
+		
+			//create the box
+			var c = [];
+			c.push("<div class='box' id='" + boxId + "'>");
+			
+			c.push(makeBoxHtml(boxId));
+
+			c.push("</div>");
+			
+			$("body").append(c.join(''));		
+		
+			$("#" + boxId).css(makeBoxCss(boxId, seriesNewL, seriesNewT));
+
+			//adjust the position			
+			seriesNewL = seriesNewL + newW;
+		
+		}
+		
+		//reset left
+		seriesNewL = seriesL * newWinW / baseWinW;
+		//increment top
+		seriesNewT = seriesNewT + newH;
+	
+	}
+	
+	//for the type codes table
+	for(var x = 0; x < 11; x++){
+	
+		var boxId = 'T_1_' + (x+1);
+	
+		//create the box
+		var c = [];
+		c.push("<div class='box' id='" + boxId + "'>");
+
+		c.push(makeTypeHtml(boxId));
+		
+		c.push("</div>");
+		
+		$("body").append(c.join(''));		
+
+		$("#" + boxId).css(makeBoxCss(boxId, typeNewL, typeNewT));
+
+		//adjust the position			
+		typeNewL = typeNewL + newW + typeNewGap;	
+	}
+			
+	$(".box").css(cssObjClass);	
+	
+}
+
+
+function makeBoxHtml(boxId){
+	var c = [];		
+	if(Elems[boxId]){
+		c.push("<div class='mask1'><span class='m1'>" + Elems[boxId].an + "</span></div>");
+		c.push("<div class='mask2'><span class='m2'>" + Elems[boxId].sym + "</span></div>");
+		c.push("<div class='mask3'><span class='m3'>" + Elems[boxId].name + "</span></div>");
+	}
+	
+	return c.join('');
+}
+
+function makeTypeHtml(boxId){
+	var c = [];		
+	if(TypesByKey[boxId]){
+		c.push("<div class='type1'><span class='t1'>" + TypesByKey[boxId].name + "</span></div>");
+	}
+console.log(c.join(''))	
+	return c.join('');
+}
+
+function makeBoxCss(boxId, newL, newT){
+	var cssObj = {};
+	cssObj.left = newL + "px";
+	cssObj.top = newT + "px";
+//console.log(Elems[boxId].sym, Types[Elems[boxId].typ].shade);
+	if(Elems[boxId] && Types[Elems[boxId].typ]){
+		var color = Types[Elems[boxId].typ].color;
+		cssObj["background-color"] = "#" + color;
+	}else if(TypesByKey[boxId]){
+		var color = TypesByKey[boxId].color;
+		cssObj["background-color"] = "#" + color;
+	}	
+	
+	return cssObj;
+			
+}
+
+
+
+
+</script>
+
+<style>
+
+body{
+font-family: Helvetica;
+xxfont-weight: bold;
+
+}
+
+.box{
+overflow: hidden;
+
+}
+
+.mask1{
+xxborder: solid thin green;
+width: 100%;
+height: 27%;
+font-size: 15px;
+}
+.m1{
+
+}
+.mask2{
+xxborder: solid thin blue;
+width: 100%;
+height: 36%;
+background-color: rgba(255,255,255,1);
+font-size: 28px;
+text-align: center;
+color:rgba(0,0,0,0);
+}
+.m2{
+
+}
+.mask3{
+xxborder: solid thin red;
+width: 100%;
+height: 37%;
+background-color: rgba(255,255,255,1);
+font-size: 12px;
+text-align: center;
+color:rgba(0,0,0,0);
+}
+.m3{
+
+}
+#control{
+position: absolute;
+left: 0;
+top:0;
+}
+.dialog{
+text-align:center;
+}
+</style>
+
+</head>
+<body>
+<div id='control'></div>
+<div id='perimage'>
+	<!--<img src='PeriodicTableWallpaper.png' style='width:100%;height:100%' alt='[]' >-->
+</div>
+
+
+<div id='dialog' class='dialog' title='Chemical Element'>
+<p>
+Show this element?
+</p>
+<input id='showMe' value='Yes!' type='button'></input>
+<p>
+Do you want a hint?
+</p>
+<input id='getHint' value='Yes!' type='button'></input>
+<p>
+<div id='hint'></div>
+-----------
+</p>
+<div id='link'></div>
+<p>
+ 
+</p>
+<input id='cancelMe' value='Cancel' type='button'></input>
+</div>
+
+<div id='dialog2' class='dialog' title='Enter Symbol'>
+<p>
+What is the symbol for this element?
+</p>
+<input id='symbolGuess' value=''></input>
+<p>
+ 
+</p>
+<input id='checkSymbolGuess' value='Check Answer' type='button'></input>
+<p>
+(capitalization is important)
+</p>
+</div>
+
+<div id='dialog3' class='dialog' title='Enter Name'>
+<p>
+What is the name of this element?
+</p>
+<input id='nameGuess' value=''></input>
+<p>
+</p>
+<input id='checkNameGuess' value='Check Answer' type='button'></input>
+</div>
+
+</body>
+</html>

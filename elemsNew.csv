@@ -1,0 +1,118 @@
+B_1_1,H,Hydrogen,1.008,1,the Greek hydro and genes meaning water-forming,Diatomic nonmetal,s-block
+B_1_18,He,Helium,4.002602,2,"the Greek, helios meaning sun",Noble gas,s-block
+B_2_1,Li,Lithium,6.94,3,the Greek lithos meaning stone,Alkali metal,s-block
+B_2_2,Be,Beryllium,9.012182,4,"the Greek name for beryl, beryllo",Alkaline earth,s-block
+B_2_13,B,Boron,10.81,5,"the Arabic buraq, which was the name for borax",Metalloid,p-block
+B_2_14,C,Carbon,12.011,6,"the Latin carbo, meaning charcoal",Polyatomic nonmetal,p-block
+B_2_15,N,Nitrogen,14.007,7,the Greek nitron and genes meaning nitre-forming,Polyatomic nonmetal,p-block
+B_2_16,O,Oxygen,15.999,8,the Greek oxy and genes meaning acid-forming,Polyatomic nonmetal,p-block
+B_2_17,F,Fluorine,18.9984032,9,"the Latin fluere, meaning to flow",Diatomic nonmetal,p-block
+B_2_18,Ne,Neon,20.1797,10,"the Greek neos, meaning new",Noble gas,p-block
+B_3_1,Na,Sodium,22.98976928,11,the English word soda (natrium in Latin)[2],Alkali metal,s-block
+B_3_2,Mg,Magnesium,24.305,12,"Magnesia, a district of Eastern Thessaly in Greece",Alkaline earth,s-block
+B_3_13,Al,Aluminium,26.9815386,13,"the Latin name for alum, alumen meaning bitter salt",Post transition metal,p-block
+B_3_14,Si,Silicon,28.085,14,"the Latin silex or silicis, meaning flint",Metalloid,p-block
+B_3_15,P,Phosphorus,30.973762,15,"the Greek phosphoros, meaning bringer of light",Polyatomic nonmetal,p-block
+B_3_16,S,Sulfur,32.06,16,"Either from the Sanskrit sulvere, or the Latin sulfurium, both names for sulfur[2]",Polyatomic nonmetal,p-block
+B_3_17,Cl,Chlorine,35.45,17,"the Greek chloros, meaning greenish yellow",Diatomic nonmetal,p-block
+B_3_18,Ar,Argon,39.948,18,"the Greek, argos, meaning idle",Noble gas,p-block
+B_4_1,K,Potassium,39.0983,19,the English word potash (kalium in Latin)[2],Alkali metal,s-block
+B_4_2,Ca,Calcium,40.078,20,the Latin calx meaning lime,Alkaline earth,s-block
+B_4_3,Sc,Scandium,44.955912,21,Scandinavia (with the Latin name Scandia),Transition metal,d-block
+B_4_4,Ti,Titanium,47.867,22,"Titans, the sons of the Earth goddess of Greek mythology",Transition metal,d-block
+B_4_5,V,Vanadium,50.9415,23,"Vanadis, an old Norse name for the Scandinavian goddess Freyja",Transition metal,d-block
+B_4_6,Cr,Chromium,51.9961,24,"the Greek chroma, meaning colour",Transition metal,d-block
+B_4_7,Mn,Manganese,54.938045,25,"Either the Latin magnes, meaning magnet or from the black magnesium oxide, magnesia nigra",Transition metal,d-block
+B_4_8,Fe,Iron,55.845,26,the Anglo-Saxon name iren (ferrum in Latin),Transition metal,d-block
+B_4_9,Co,Cobalt,58.933195,27,"the German word kobald, meaning goblin",Transition metal,d-block
+B_4_10,Ni,Nickel,58.6934,28,the shortened of the German kupfernickel meaning either devils copper or St. Nicholass copper,Transition metal,d-block
+B_4_11,Cu,Copper,63.546,29,"the Old English name coper in turn derived from the Latin Cyprium aes, meaning a metal from Cyprus",Transition metal,d-block
+B_4_12,Zn,Zinc,65.38,30,"the German, zinc, which may in turn be derived from the Persian word sing, meaning stone",Transition metal,d-block
+B_4_13,Ga,Gallium,69.723,31,France (with the Latin name Gallia),Post transition metal,d-block
+B_4_14,Ge,Germanium,72.63,32,Germany (with the Latin name Germania),Metalloid,d-block
+B_4_15,As,Arsenic,74.9216,33,the Greek name arsenikon for the yellow pigment orpiment,Metalloid,d-block
+B_4_16,Se,Selenium,78.96,34,Moon (with the Greek name selene),Polyatomic nonmetal,d-block
+B_4_17,Br,Bromine,79.904,35,the Greek bromos meaning stench,Diatomic nonmetal,d-block
+B_4_18,Kr,Krypton,83.798,36,"the Greek kryptos, meaning hidden",Noble gas,d-block
+B_5_1,Rb,Rubidium,85.4678,37,"the Latin rubidius, meaning deepest red",Alkali metal,s-block
+B_5_2,Sr,Strontium,87.62,38,"Strontian, a small town in Scotland",Alkaline earth,s-block
+B_5_3,Y,Yttrium,88.90585,39,"Ytterby, Sweden",Transition metal,d-block
+B_5_4,Zr,Zirconium,91.224,40,"the Persian zargun, meaning gold coloured",Transition metal,d-block
+B_5_5,Nb,Niobium,92.90638,41,"Niobe, daughter of king Tantalus from Greek mythology",Transition metal,d-block
+B_5_6,Mo,Molybdenum,95.96,42,the Greek molybdos meaning lead,Transition metal,d-block
+B_5_7,Tc,Technetium,,43,the Greek tekhnetos meaning artificial,Transition metal,d-block
+B_5_8,Ru,Ruthenium,101.07,44,Russia (with the Latin name Ruthenia),Transition metal,d-block
+B_5_9,Rh,Rhodium,102.9055,45,"the Greek rhodon, meaning rose coloured",Transition metal,d-block
+B_5_10,Pd,Palladium,106.42,46,From the asteroid Pallas which had been recently discovered and named at the time. The asteroid was considered a planet when it was discovered,Transition metal,d-block
+B_5_11,Ag,Silver,107.8682,47,the Anglo-Saxon name siolfur (argentum in Latin)[2],Transition metal,d-block
+B_5_12,Cd,Cadmium,112.411,48,"the Latin name for the mineral calmine, cadmia",Transition metal,d-block
+B_5_13,In,Indium,114.818,49,"the Latin indicium, meaning violet or indigo",Post transition metal,p-block
+B_5_14,Sn,Tin,118.71,50,"the Anglo-Saxon word tin (stannum in Latin, meaning hard)",Post transition metal,p-block
+B_5_15,Sb,Antimony,121.76,51,"the Greek anti – monos, meaning not alone (stibium in Latin)",Metalloid,p-block
+B_5_16,Te,Tellurium,127.6,52,"Earth, the third planet on solar system (with the Latin word tellus)",Metalloid,p-block
+B_5_17,I,Iodine,126.90447,53,the Greek iodes meaning violet,Diatomic nonmetal,p-block
+B_5_18,Xe,Xenon,131.293,54,the Greek xenos meaning stranger,Noble gas,p-block
+B_6_1,Cs,Caesium,132.9054519,55,"the Latin caesius, meaning sky blue",Alkali metal,s-block
+B_6_2,Ba,Barium,137.327,56,"the Greek barys, meaning heavy",Alkaline earth,s-block
+S_6_1,La,Lanthanum,138.90547,57,"the Greek lanthanein, meaning to lie hidden",Lanthanide,f-block
+S_6_2,Ce,Cerium,140.116,58,"Ceres, the Roman God of agriculture",Lanthanide,f-block
+S_6_3,Pr,Praseodymium,140.90765,59,the Greek prasios didymos meaning green twin,Lanthanide,f-block
+S_6_4,Nd,Neodymium,144.242,60,the Greek neos didymos meaning new twin,Lanthanide,f-block
+S_6_5,Eu,Europium,0,61,Europe,Lanthanide,f-block
+S_6_6,Sm,Samarium,150.36,62,"Samarskite, the name of the mineral from which it was first isolated",Lanthanide,f-block
+S_6_7,Eu,Europium,151.964,63,Europe,Lanthanide,f-block
+S_6_8,Gd,Gadolinium,157.25,64,"Johan Gadolin, chemist, physicist and mineralogist",Lanthanide,f-block
+S_6_9,Tb,Terbium,158.92535,65,"Ytterby, Sweden",Lanthanide,f-block
+S_6_10,Dy,Dysprosium,162.5,66,"the Greek dysprositos, meaning hard to get",Lanthanide,f-block
+S_6_11,Ho,Holmium,164.93032,67,"Stockholm, Sweden (with the Latin name Holmia)",Lanthanide,f-block
+S_6_12,Er,Erbium,167.259,68,"Ytterby, Sweden",Lanthanide,f-block
+S_6_13,Tm,Thulium,168.93421,69,"Thule, the ancient name for Scandinavia",Lanthanide,f-block
+S_6_14,Yb,Ytterbium,173.054,70,"Ytterby, Sweden",Lanthanide,f-block
+S_6_15,Lu,Lutetium,174.9668,71,"Paris, France (with the Roman name Lutetia)",Lanthanide,f-block
+B_6_4,Hf,Hafnium,178.49,72,"Copenhagen, Denmark (with the Latin name Hafnia)",Transition metal,d-block
+B_6_5,Ta,Tantalum,180.94788,73,"King Tantalus, father of Niobe from Greek mythology",Transition metal,d-block
+B_6_6,W,Tungsten,183.84,74,"the Swedish tung sten meaning heavy stone (W is wolfram, the old name of the tungsten mineral wolframite)[2]",Transition metal,d-block
+B_6_7,Re,Rhenium,186.207,75,"Rhine, a river that flows from Grisons in the eastern Swiss Alps to the North Sea coast in the Netherlands (with the Latin name Rhenia)",Transition metal,d-block
+B_6_8,Os,Osmium,190.23,76,"the Greek osme, meaning smell",Transition metal,d-block
+B_6_9,Ir,Iridium,192.217,77,"Iris, the Greek goddess of the rainbow",Transition metal,d-block
+B_6_10,Pt,Platinum,195.084,78,"the Spanish platina, meaning little silver",Transition metal,d-block
+B_6_11,Au,Gold,196.966569,79,"the Anglo-Saxon word gold (aurum in Latin, meaning glow of sunrise)[2]",Transition metal,d-block
+B_6_12,Hg,Mercury,200.59,80,"Mercury, the first planet in the Solar System (Hg from former name hydrargyrum, from Greek hydr- water and argyros silver)",Transition metal,d-block
+B_6_13,Tl,Thallium,204.38,81,"the Greek thallos, meaning a green twig",Post transition metal,p-block
+B_6_14,Pb,Lead,207.2,82,the Anglo-Saxon lead (plumbum in Latin)[2],Post transition metal,p-block
+B_6_15,Bi,Bismuth,208.9804,83,the German Bisemutum a corruption of Weisse Masse meaning white mass,Post transition metal,p-block
+B_6_16,Po,Polonium,0,84,"Poland, the native country of Marie Curie, who first isolated the element",Post transition metal,p-block
+B_6_17,At,Astatine,0,85,"the Greek astatos, meaning unstable",Metalloid,p-block
+B_6_18,Rn,Radon,0,86,"From radium, as it was first detected as an emission from radium during radioactive decay",Noble gas,p-block
+B_7_1,Fr,Francium,0,87,France,Alkali metal,s-block
+B_7_2,Ra,Radium,0,88,"the Latin radius, meaning ray",Alkaline earth,s-block
+S_7_1,Ac,Actinium,0,89,"the Greek actinos, meaning a ray",Actinide,f-block
+S_7_2,Th,Thorium,232.03806,90,"Thor, the Scandinavian god of thunder",Actinide,f-block
+S_7_3,Pa,Protactinium,231.03588,91,"the Greek protos, meaning first, as a prefix to the element actinium, which is produced through the radioactive decay of protactinium",Actinide,f-block
+S_7_4,U,Uranium,238.02891,92,"Uranus, the seventh planet in the Solar System",Actinide,f-block
+S_7_5,Np,Neptunium,0,93,"Neptune, the eighth planet in the Solar System",Actinide,f-block
+S_7_6,Pu,Plutonium,0,94,"Pluto, a dwarf planet in the Solar System",Actinide,f-block
+S_7_7,Am,Americium,0,95,"Americas, the continent where the element was first synthesized",Actinide,f-block
+S_7_8,Cm,Curium,0,96,"Pierre Curie, a physicist, and Marie Curie, a physicist and chemist",Actinide,f-block
+S_7_9,Bk,Berkelium,0,97,"Berkeley, California, USA, where the element was first synthesized",Actinide,f-block
+S_7_10,Cf,Californium,0,98,"State of California, USA, where the element was first synthesized",Actinide,f-block
+S_7_11,Es,Einsteinium,0,99,"Albert Einstein, physicist",Actinide,f-block
+S_7_12,Fm,Fermium,0,100,"Enrico Fermi, physicist",Actinide,f-block
+S_7_13,Md,Mendelevium,0,101,"Dmitri Mendeleyev, chemist and inventor",Actinide,f-block
+S_7_14,No,Nobelium,0,102,"Alfred Nobel, chemist, engineer, innovator, and armaments manufacturer",Actinide,f-block
+S_7_15,Lr,Lawrencium,0,103,"Ernest O. Lawrence, physicist",Actinide,f-block
+B_7_4,Rf,Rutherfordium,0,104,"Ernest Rutherford, chemist and physicist",Transition metal,d-block
+B_7_5,Db,Dubnium,0,105,"Dubna, Russia",Transition metal,d-block
+B_7_6,Sg,Seaborgium,0,106,"Glenn T. Seaborg, scientist",Transition metal,d-block
+B_7_7,Bh,Bohrium,0,107,"Niels Bohr, physicist",Transition metal,d-block
+B_7_8,Hs,Hassium,0,108,"Hesse, Germany, where the element was first synthesized",Transition metal,d-block
+B_7_9,Mt,Meitnerium,0,109,"Lise Meitner, physicist",Unknown,d-block
+B_7_10,Ds,Darmstadtium,0,110,"Darmstadt, Germany, where the element was first synthesized",Unknown,d-block
+B_7_11,Rg,Roentgenium,0,111,"Wilhelm Conrad Röntgen, physicist",Unknown,d-block
+B_7_12,Cn,Copernicium,0,112,"Nicolaus Copernicus, astronomer",Transition metal,d-block
+B_7_13,Uut,Ununtrium,0,113,IUPAC systematic element name,Unknown,d-block
+B_7_14,Fl,Flerovium,0,114,"Georgy Flyorov, physicist",Unknown,d-block
+B_7_15,Uup,Ununpentium,0,115,IUPAC systematic element name,Unknown,d-block
+B_7_16,Lv,Livermorium,0,116,"Lawrence Livermore National Laboratory, within the city of Livermore, California, USA, which collaborated with JINR on the discovery of the element",Unknown,d-block
+B_7_17,Uus,Ununseptium,0,117,IUPAC systematic element name,Unknown,d-block
+B_7_18,Uuo,Ununoctium,0,118,IUPAC systematic element name,Unknown,d-block
