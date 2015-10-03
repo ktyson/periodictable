@@ -1,0 +1,19 @@
+{
+  "name": "PeriodicTable",
+  "version": "0.0.1",
+  "description": "spiraling atoms",
+  "main": "servePeriodicTable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ktyson/periodictable.git"
+  },
+  "author": "kdtyson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ktyson/periodictable/issues"
+  },
+  "homepage": "https://github.com/ktyson/periodictable"
+}
