@@ -2,10 +2,9 @@
 <head>
 <meta charset="utf-8">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+<script src="jslib/jquery.1.8.0.min.js" type="text/javascript"></script>
+<script src="jslib/jquery-ui.1.9.0.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="jslib/jqueryui.lightness.css" type="text/css" media="all" />
 
 <script>
 
@@ -175,15 +174,15 @@ $(document).ready(function(){
 		if($("#showAll").hasClass("show")){
 			//make clear
 			$("#showAll").removeClass("show");
-			$(".mask2").css("opacity","1");
-			$(".mask3").css("opacity","1");
-			$(this).attr("value","Show All");
+			$(".part2").hide();
+			$(".part3").hide();
+			$(this).text("Show All");
 		}else{
 			//display
 			$("#showAll").addClass("show");
-			$(".mask2").css("opacity","0");
-			$(".mask3").css("opacity","0");
-			$(this).attr("value","Mask All");
+			$(".part2").show();
+			$(".part3").show();
+			$(this).text("Hide All");
 		}
 	
 	});
@@ -205,22 +204,12 @@ $(document).ready(function(){
 	
 	$("#showMe").on("click", function(){
 		
-		$("#"+currId).find(".mask2").css("opacity","0");
-		$("#"+currId).find(".mask3").css("opacity","0");
+		$("#"+currId).find(".part2").show();
+		$("#"+currId).find(".part3").show();
 		$( "#dialog" ).dialog( "close" );
 		
 	});
 	
-
-	$(".mask1").on("click", function(){
-		currId = $(this).parent().attr("id");
-		$("#hint").html('');
-		var url = "http://en.wikipedia.org/wiki/" + Elems[currId].name;		
-		$("#link").html("<a href='" + url + "' target='_blank'>More Info</a>");
-		$("#dialog").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
-		$( "#dialog" ).dialog( "open" );	
-	
-	});
 	
 	$("#symbolGuess").on("keyup", function(e){
 		if(e.which == 13) {
@@ -231,8 +220,11 @@ $(document).ready(function(){
 	$("#checkSymbolGuess").on("click", function(){
 		var ans = $("#symbolGuess").val();
 		if(ans == Elems[currId].sym){
-			$('#'+currId).find(".mask2").css("color","rgba(0,0,0,1)");			
+			$('#'+currId).find(".part2:hidden").show();			
 			$( "#dialog2" ).dialog( "close" );
+		} else {
+			openAnswer();
+			$( "#dialog2" ).dialog( "close" );		
 		}
 		$("#symbolGuess").val('');
 	});
@@ -246,27 +238,38 @@ $(document).ready(function(){
 	$("#checkNameGuess").on("click", function(){
 		var ans = $("#nameGuess").val();
 		if(ans.toUpperCase() == Elems[currId].name.toUpperCase()){
-			$('#'+currId).find(".mask3").css("color","rgba(0,0,0,1)");
+			$('#'+currId).find(".part3:hidden").show();
+			$( "#dialog3" ).dialog( "close" );
+		} else {
+			openAnswer();
 			$( "#dialog3" ).dialog( "close" );
 		}
 		$("#nameGuess").val('');
 	});	
 	
+	function openAnswer() {
+
+		$("#hint").html('');
+		var url = "http://en.wikipedia.org/wiki/" + Elems[currId].name;		
+		$("#link").html("<a href='" + url + "' target='_blank'>More Info</a>");
+		$("#dialog").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+		$( "#dialog" ).dialog( "open" );		
+	}
 	
-	$(".mask2").on("click", function(){
-		currId = $(this).parent().attr("id");
-		$("#dialog2").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
-		$( "#dialog2" ).dialog( "open" );
-			
-	});
-	
-	$(".mask3").on("click", function(){
-	
-		currId = $(this).parent().attr("id");
-		$("#dialog3").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
-		$( "#dialog3" ).dialog( "open" );
-			
-	});
+	$(".box").on("click", function(e){
+		
+		currId = $(this).attr("id");
+		var part2Div = $(this).find(".part2");	
+		var part3Div = $(this).find(".part3");
+		
+		if(!$(part2Div).is(":visible")) {
+			$("#dialog2").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+			$("#dialog2" ).dialog( "open" );
+		} else if(!$(part3Div).is(":visible")) {
+			$("#dialog3").dialog('option', 'title', 'Atomic Number '+ Elems[currId].an);
+			$( "#dialog3" ).dialog( "open" );
+		} 	
+	});	
 	
 	
 });
@@ -281,8 +284,8 @@ $(window).resize(function(){
 function makeControls(){
 
 	var c = [];
-	
-	c.push("<input id='showAll' type='button' value='Show All'></input>");
+	// class='show'
+	c.push("<button id='showAll'>Hide All</button>");
 	
 	$("#control").append(c.join(''));
 
@@ -330,6 +333,9 @@ function recalcBoxes(){
 	cssObjClass.width = newW + "px";
 	cssObjClass.height = newH + "px";
 
+	$("#showAll").removeClass("show");
+	$("#showAll").attr("value","Hide All");
+	$("#display").html("");
 
 	//for the main periodic table			
 	for(var d = 0; d < 7; d++){
@@ -337,7 +343,6 @@ function recalcBoxes(){
 		for(var x = 0; x < 18; x++){
 		
 			var boxId = 'B_' + (d+1) + '_' + (x+1);
-
 		
 			//create the box
 			var c = [];
@@ -345,7 +350,7 @@ function recalcBoxes(){
 			c.push(makeBoxHtml(boxId));
 			c.push("</div>");
 			
-			$("body").append(c.join(''));		
+			$("#display").append(c.join(''));		
 		
 			$("#" + boxId).css(makeBoxCss(boxId, newL, newT));
 		
@@ -376,7 +381,7 @@ function recalcBoxes(){
 
 			c.push("</div>");
 			
-			$("body").append(c.join(''));		
+			$("#display").append(c.join(''));		
 		
 			$("#" + boxId).css(makeBoxCss(boxId, seriesNewL, seriesNewT));
 
@@ -405,7 +410,7 @@ function recalcBoxes(){
 		
 		c.push("</div>");
 		
-		$("body").append(c.join(''));		
+		$("#display").append(c.join(''));		
 
 		$("#" + boxId).css(makeBoxCss(boxId, typeNewL, typeNewT));
 
@@ -421,9 +426,9 @@ function recalcBoxes(){
 function makeBoxHtml(boxId){
 	var c = [];		
 	if(Elems[boxId]){
-		c.push("<div class='mask1'><span class='m1'>" + Elems[boxId].an + "</span></div>");
-		c.push("<div class='mask2'><span class='m2'>" + Elems[boxId].sym + "</span></div>");
-		c.push("<div class='mask3'><span class='m3'>" + Elems[boxId].name + "</span></div>");
+		c.push("<div class='part1'><span class='m1'>" + Elems[boxId].an + "</span></div>");
+		c.push("<div class='part2'><span class='m2'>" + Elems[boxId].sym + "</span></div>");
+		c.push("<div class='part3'><span class='m3'>" + Elems[boxId].name + "</span></div>");
 	}
 	
 	return c.join('');
@@ -434,7 +439,7 @@ function makeTypeHtml(boxId){
 	if(TypesByKey[boxId]){
 		c.push("<div class='type1'><span class='t1'>" + TypesByKey[boxId].name + "</span></div>");
 	}
-console.log(c.join(''))	
+
 	return c.join('');
 }
 
@@ -473,39 +478,38 @@ overflow: hidden;
 
 }
 
-.mask1{
+.part1{
 xxborder: solid thin green;
 width: 100%;
 height: 27%;
 font-size: 15px;
 }
-.m1{
 
-}
-.mask2{
+.part2{
 xxborder: solid thin blue;
 width: 100%;
-height: 36%;
-background-color: rgba(255,255,255,1);
-font-size: 28px;
+height: 34%;
+xbackground-color: rgba(255,255,255,1);
+font-size: 20px;
 text-align: center;
-color:rgba(0,0,0,0);
-}
-.m2{
 
 }
-.mask3{
+
+.part3{
 xxborder: solid thin red;
 width: 100%;
-height: 37%;
-background-color: rgba(255,255,255,1);
-font-size: 12px;
+height: 39%;
+xbackground-color: rgba(255,255,255,1);
+font-size: 10px;
 text-align: center;
-color:rgba(0,0,0,0);
-}
-.m3{
 
 }
+
+.type1{
+xxborder: solid thin green;
+font-size: 12px;
+}
+
 #control{
 position: absolute;
 left: 0;
@@ -517,13 +521,9 @@ text-align:center;
 </style>
 
 </head>
-<body>
+<body oncontextmenu="return false;">
 <div id='control'></div>
-<div id='perimage'>
-	<!--<img src='PeriodicTableWallpaper.png' style='width:100%;height:100%' alt='[]' >-->
-</div>
-
-
+<div id='display'></div>
 <div id='dialog' class='dialog' title='Chemical Element'>
 <p>
 Show this element?
